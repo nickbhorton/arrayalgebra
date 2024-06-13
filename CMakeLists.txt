@@ -14,3 +14,13 @@ add_compile_options(
     -Werror
     -Wextra
 )
+
+add_executable(
+    mult
+    benchmark/multiplication.cc
+)
+target_include_directories(
+    mult
+    PUBLIC
+    ${CMAKE_SOURCE_DIR}
+)
