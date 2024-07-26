@@ -9,7 +9,7 @@
 namespace aa
 {
 
-typedef double Float;
+typedef float Float;
 typedef int Integer;
 typedef unsigned int Uinteger;
 
@@ -40,8 +40,8 @@ typedef std::array<std::array<Uinteger, 4>, 4> umat4;
 
 // Generic size operations
 template <typename T, std::size_t N>
-constexpr auto operator<<(std::ostream& os, std::array<T, N> const& a)
-    -> std::ostream&
+constexpr auto
+operator<<(std::ostream& os, std::array<T, N> const& a) -> std::ostream&
 {
     for (size_t j = 0; j < N; j++) {
         os << a[j] << " ";
@@ -112,8 +112,8 @@ constexpr auto operator-(std::array<T, N> const& a1) -> std::array<T, N>
 }
 
 template <typename T, std::size_t N, std::size_t M>
-constexpr auto operator-(std::array<std::array<T, M>, N> const& m)
-    -> std::array<std::array<T, M>, N>
+constexpr auto operator-(std::array<std::array<T, M>, N> const& m
+) -> std::array<std::array<T, M>, N>
 {
     std::array<std::array<T, M>, N> result{};
     for (size_t i = 0; i < N; i++) {
@@ -125,8 +125,8 @@ constexpr auto operator-(std::array<std::array<T, M>, N> const& m)
 }
 
 template <typename T, std::size_t N>
-constexpr auto operator*(std::array<T, N> const& a, T const v)
-    -> std::array<T, N>
+constexpr auto
+operator*(std::array<T, N> const& a, T const v) -> std::array<T, N>
 {
     std::array<T, N> result{};
     for (size_t j = 0; j < N; j++) {
@@ -149,8 +149,8 @@ constexpr auto operator*(std::array<std::array<T, M>, N> const& m, T const& v)
 }
 
 template <typename T, std::size_t N>
-constexpr auto operator*(T const v, std::array<T, N> const& a)
-    -> std::array<T, N>
+constexpr auto
+operator*(T const v, std::array<T, N> const& a) -> std::array<T, N>
 {
     std::array<T, N> result{};
     for (size_t j = 0; j < N; j++) {
@@ -218,8 +218,8 @@ constexpr auto dot(std::array<T, N> const& a1, std::array<T, N> const& a2) -> T
 }
 
 template <typename T, std::size_t N>
-constexpr auto transpose(std::array<std::array<T, N>, N> const& a)
-    -> std::array<std::array<T, N>, N>
+constexpr auto transpose(std::array<std::array<T, N>, N> const& a
+) -> std::array<std::array<T, N>, N>
 {
     std::array<std::array<T, N>, N> result;
     for (std::size_t i = 0; i < N; i++) {
