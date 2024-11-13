@@ -39,6 +39,8 @@ typedef std::array<std::array<Uinteger, 4>, 4> umat4;
 } // namespace aa
 
 // Generic size operations
+
+// Printing function
 template <typename T, std::size_t N>
 constexpr auto
 operator<<(std::ostream& os, std::array<T, N> const& a) -> std::ostream&
@@ -49,6 +51,7 @@ operator<<(std::ostream& os, std::array<T, N> const& a) -> std::ostream&
     return os;
 }
 
+// v1 + v2
 template <typename T, std::size_t N>
 constexpr auto operator+(std::array<T, N> const& a1, std::array<T, N> const& a2)
     -> std::array<T, N>
@@ -60,6 +63,7 @@ constexpr auto operator+(std::array<T, N> const& a1, std::array<T, N> const& a2)
     return result;
 }
 
+// m1 + m2
 template <typename T, std::size_t N, std::size_t M>
 constexpr auto operator+(
     std::array<std::array<T, M>, N> const& m1,
@@ -75,6 +79,7 @@ constexpr auto operator+(
     return result;
 }
 
+// v1 - v2
 template <typename T, std::size_t N>
 constexpr auto operator-(std::array<T, N> const& a1, std::array<T, N> const& a2)
     -> std::array<T, N>
@@ -86,6 +91,7 @@ constexpr auto operator-(std::array<T, N> const& a1, std::array<T, N> const& a2)
     return result;
 }
 
+// m1 - m2
 template <typename T, std::size_t N, std::size_t M>
 constexpr auto operator-(
     std::array<std::array<T, M>, N> const& m1,
@@ -101,6 +107,7 @@ constexpr auto operator-(
     return result;
 }
 
+// -v
 template <typename T, std::size_t N>
 constexpr auto operator-(std::array<T, N> const& a1) -> std::array<T, N>
 {
@@ -111,6 +118,7 @@ constexpr auto operator-(std::array<T, N> const& a1) -> std::array<T, N>
     return result;
 }
 
+// -m
 template <typename T, std::size_t N, std::size_t M>
 constexpr auto operator-(std::array<std::array<T, M>, N> const& m
 ) -> std::array<std::array<T, M>, N>
@@ -124,6 +132,7 @@ constexpr auto operator-(std::array<std::array<T, M>, N> const& m
     return result;
 }
 
+// v * c
 template <typename T, std::size_t N>
 constexpr auto
 operator*(std::array<T, N> const& a, T const v) -> std::array<T, N>
@@ -135,6 +144,7 @@ operator*(std::array<T, N> const& a, T const v) -> std::array<T, N>
     return result;
 }
 
+// m * c
 template <typename T, std::size_t N, std::size_t M>
 constexpr auto operator*(std::array<std::array<T, M>, N> const& m, T const& v)
     -> std::array<std::array<T, M>, N>
@@ -148,6 +158,7 @@ constexpr auto operator*(std::array<std::array<T, M>, N> const& m, T const& v)
     return result;
 }
 
+// c * v
 template <typename T, std::size_t N>
 constexpr auto
 operator*(T const v, std::array<T, N> const& a) -> std::array<T, N>
@@ -159,6 +170,7 @@ operator*(T const v, std::array<T, N> const& a) -> std::array<T, N>
     return result;
 }
 
+// c * m
 template <typename T, std::size_t N, std::size_t M>
 constexpr auto operator*(T const& v, std::array<std::array<T, M>, N> const& m)
     -> std::array<std::array<T, M>, N>
@@ -172,6 +184,7 @@ constexpr auto operator*(T const& v, std::array<std::array<T, M>, N> const& m)
     return result;
 }
 
+// m * v
 template <typename T, std::size_t N>
 constexpr auto operator*(
     std::array<std::array<T, N>, N> const& mat,
@@ -189,6 +202,7 @@ constexpr auto operator*(
     return result;
 }
 
+// m1 * m2
 template <typename T, std::size_t N, std::size_t M>
 constexpr auto operator*(
     std::array<std::array<T, N>, M> const& m1,
@@ -206,6 +220,7 @@ constexpr auto operator*(
     return result;
 }
 
+// v1 dot v2
 template <typename T, std::size_t N>
 constexpr auto dot(std::array<T, N> const& a1, std::array<T, N> const& a2) -> T
 {
@@ -217,6 +232,7 @@ constexpr auto dot(std::array<T, N> const& a1, std::array<T, N> const& a2) -> T
     );
 }
 
+// transpose m
 template <typename T, std::size_t N>
 constexpr auto transpose(std::array<std::array<T, N>, N> const& a
 ) -> std::array<std::array<T, N>, N>
@@ -230,6 +246,7 @@ constexpr auto transpose(std::array<std::array<T, N>, N> const& a
     return result;
 }
 
+// v1 cross v2
 template <typename T>
 constexpr auto cross(std::array<T, 3> const& v1, std::array<T, 3> const& v2)
     -> std::array<T, 3>
@@ -241,6 +258,7 @@ constexpr auto cross(std::array<T, 3> const& v1, std::array<T, 3> const& v2)
     return result;
 }
 
+// magnitude v
 template <typename T, std::size_t N>
 constexpr auto magnitude(std::array<T, N> const& v) -> T
 {
@@ -251,6 +269,7 @@ constexpr auto magnitude(std::array<T, N> const& v) -> T
     return std::sqrt(acc);
 }
 
+// normalize v
 template <typename T, std::size_t N>
 constexpr auto normalize(std::array<T, N> const& v) -> std::array<T, N>
 {
