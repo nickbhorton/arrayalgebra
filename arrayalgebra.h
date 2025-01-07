@@ -26,6 +26,8 @@ typedef std::array<Uinteger, 2> uvec2;
 typedef std::array<Uinteger, 3> uvec3;
 typedef std::array<Uinteger, 4> uvec4;
 
+typedef std::array<uint8_t, 4> u8vec4;
+
 typedef std::array<std::array<Float, 2>, 2> mat2;
 typedef std::array<std::array<Float, 3>, 3> mat3;
 typedef std::array<std::array<Float, 4>, 4> mat4;
