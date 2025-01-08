@@ -3,6 +3,7 @@
 
 #include <array>
 #include <cmath>
+#include <cstdint>
 #include <iostream>
 #include <numeric>
 #include <tuple>
@@ -26,6 +27,8 @@ typedef std::array<Uinteger, 2> uvec2;
 typedef std::array<Uinteger, 3> uvec3;
 typedef std::array<Uinteger, 4> uvec4;
 
+typedef std::array<uint8_t, 2> u8vec2;
+typedef std::array<uint8_t, 3> u8vec3;
 typedef std::array<uint8_t, 4> u8vec4;
 
 typedef std::array<std::array<Float, 2>, 2> mat2;
