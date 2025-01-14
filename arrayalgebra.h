@@ -20,7 +20,7 @@ typedef std::array<Float, 3> vec3;
 typedef std::array<Float, 4> vec4;
 
 typedef std::array<double, 2> dvec2;
-typedef std::array<double , 3> dvec3;
+typedef std::array<double, 3> dvec3;
 typedef std::array<double, 4> dvec4;
 
 typedef std::array<Integer, 2> ivec2;
