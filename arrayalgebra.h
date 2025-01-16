@@ -478,7 +478,7 @@ template <typename T>
 auto orthogonal(T fov_degrees, T aspect_ratio, T near, T far)
     -> std::array<std::array<T, 4>, 4>
 {
-    // perspective projection
+    // orthogonal projection
     std::array<std::array<T, 4>, 4> proj{identity<T, 4>()};
     T fov = radians<T>(fov_degrees);
     T const n = near;
